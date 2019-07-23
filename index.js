@@ -47,7 +47,7 @@ files.forEach(file => {
   const targetPathJS = targetPath.replace(REG_TSX, ".js");
   const result = transformTsx(filePath);
 
-  traverseTsxToTransformLess(result.ast, filePath, targetPath);
+  traverseTsxToTransform(result.ast, filePath, targetPath);
   generateJS(result.ast, targetPathJS);
 });
 
@@ -68,8 +68,9 @@ function getFiles(reg, cwd) {
   });
 }
 
-function traverseTsxToTransformLess(ast, filePath, targetPath) {
+function traverseTsxToTransform(ast, filePath, targetPath) {
   const REG_LESS = /\.less$/;
+  const REG_TSX = /\.tsx?$/;
 
   traverse(ast, {
     ImportDeclaration: function(file) {
@@ -84,6 +85,10 @@ function traverseTsxToTransformLess(ast, filePath, targetPath) {
 
         generateCSS(input, lessPath, targetPathCSS);
         file.node.source.value = value.replace(REG_LESS, ".css");
+      }
+
+      if (REG_TSX.test(value)) {
+        file.node.source.value = value.replace(REG_TSX, ".js");
       }
     }
   });

@@ -1,0 +1,14 @@
+{
+  "name": "traverse-esm-component",
+  "version": "0.0.1",
+  "description": "保持文件结构转换 tsx/less 组件为 js/css 到其他目录",
+  "main": "index.js",
+  "bin": {
+    "tec": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "simdd",
+  "license": "ISC"
+}

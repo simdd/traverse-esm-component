@@ -18,6 +18,11 @@ const REG_FILE = "**/*.{ts,tsx}";
 let target;
 let current;
 
+if (process.argv.indexOf("-h") > -1) {
+  help();
+  return;
+}
+
 process.argv.forEach(function(val, index, array) {
   if (val === "-s") {
     current = array[index + 1];
@@ -45,6 +50,16 @@ files.forEach(file => {
   traverseTsxToTransformLess(result.ast, filePath, targetPath);
   generateJS(result.ast, targetPathJS);
 });
+
+function help() {
+  console.log(
+    "\nParams: \n" +
+      "  -s: 要转化的源文件夹\n" +
+      "  -t: 转化后输出的文件夹\n" +
+      "\nUsage: \n" +
+      "  tec -s components -t es\n"
+  );
+}
 
 function getFiles(reg, cwd) {
   return glob.sync(reg, {

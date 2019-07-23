@@ -1,6 +1,6 @@
 {
   "name": "traverse-esm-component",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "保持文件结构转换 tsx/less 组件为 js/css 到其他目录",
   "main": "index.js",
   "bin": {

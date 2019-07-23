@@ -1,1 +1,5 @@
-# traverse-esm-component
+### traverse-esm-component
+
+```
+$ tec -s components -d es
+```

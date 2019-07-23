@@ -10,5 +10,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "simdd",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/generator": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/traverse": "^7.5.5",
+    "glob": "^7.1.4",
+    "less": "^3.9.0",
+    "rimraf": "^2.6.3"
+  }
 }
